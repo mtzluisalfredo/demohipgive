@@ -260,6 +260,7 @@ page-payment {
   }
 
   .paypal {
+    border-radius: 6px;
     color: #a2a2a2;
     font-size: 1.3rem;
 
@@ -276,10 +277,25 @@ page-payment {
     ion-icon {
       color: red;
     }
+
+    ion-card-content {
+        padding: 0;
+    }
   }
 
   .btn-card {
-    padding-left: 0;
+    border-bottom: 1px solid #d3d3d3;
+    padding-left: 8px;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+
+    &.selected {
+        img {
+          border: 2px solid red;
+        }
+    }
 
     ion-avatar {
       margin: 8px 0 8px 0 !important;
