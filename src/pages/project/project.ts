@@ -49,7 +49,7 @@ export class ProjectPage {
   }
 
   presentActionSheet() {
-		console.log("​ProjectPage -> presentActionSheet -> presentActionSheet",this.actionSheetCtrl)
+    console.log("​ProjectPage -> presentActionSheet -> presentActionSheet", this.actionSheetCtrl)
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Share project',
       buttons: [
