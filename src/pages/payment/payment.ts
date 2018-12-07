@@ -15,7 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PaymentPage {
   showCard: boolean = false;
+  subscribe: boolean = false;
+  save: boolean = false;
   menu: string = '';
+  code: number;
+  expiration: number;
+  number: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -33,8 +38,22 @@ export class PaymentPage {
     this.menu = 'card';
     this.toggleCard();
   }
+
   toggleCard(){
     this.showCard = !this.showCard;
+  }
+
+  updateSubscribe(){
+		console.log("​PaymentPage -> updateSubscribe -> this.subscribe", this.subscribe);
+  }
+
+  updateSave(){
+		console.log("​PaymentPage -> updateSave -> this.save", this.save);
+  }
+
+  addCard() {
+		console.log("​PaymentPage -> addCard");
+
   }
 
   pageBack() {

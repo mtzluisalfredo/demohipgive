@@ -70,36 +70,36 @@ page-payment {
     }
   }
 
-//   .btn-organitation-back {
-//     border: 1px solid #c7c5c5;
-//     border-radius: 10px;
-//     padding-left: 6px;
-//     width: 100%;
+  .btn-organitation-back {
+    border: 1px solid #c7c5c5;
+    border-radius: 10px;
+    padding-left: 0;
+    width: 100%;
 
-//     .title-btn-organitation {
-//       display: flex;
-//       flex-direction: column;
-//     }
+    .title-btn-organitation {
+      display: flex;
+      flex-direction: column;
+    }
 
-//     ion-icon {
-//       margin-right: 10px !important;
-//       color: #9d9d9d;
-//     }
+    ion-icon {
+      margin-right: 10px !important;
+      color: #9d9d9d;
+    }
 
-//     ion-avatar {
-//       margin-right: 0 !important;
-//     }
+    ion-avatar {
+      margin-right: 0 !important;
+    }
 
-//     .item-inner {
-//       margin-left: 0 !important;
-//       padding-left: 0 !important;
+    .item-inner {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
 
-//       .toolbar-title {
-//         font-size: 1.6rem;
-//         padding: 0;
-//       }
-//     }
-//   }
+      .toolbar-title {
+        font-size: 1.6rem;
+        padding: 0;
+      }
+    }
+  }
 
 
   ion-icon {
@@ -148,7 +148,29 @@ page-payment {
     border-top-right-radius: 6px;
   }
 
+  .btn-center {
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+
+    .btn-login {
+      margin: 0;
+      width: 90%;
+    }
+  }
+
+  button-hipgive {
+    width: 100%;
+  }
+
   .card-custom {
+    background-color: white;
+    border-radius: 6px;
+
+    .toolbar-title {
+      color: #9d9d9d;
+    }
+
     &-item {
       border-top: 1px solid #dedede;
       color: #9d9d9d;
@@ -162,6 +184,78 @@ page-payment {
         border-bottom-right-radius: 6px;
       }
 
+    }
+
+    .input-app {
+      border: 1px solid #d3d3d3;
+      border-radius: 5px;
+      padding-left: 3px;
+      padding-right: 3px;
+
+      .item-inner {
+          border: 0;
+      }
+    }
+
+    &-left {
+        color: #9d9d9d;
+
+      ion-label {
+        color: #9d9d9d;
+        font-size: 17px;
+      }
+    }
+
+    &-right {
+      text-align: end;
+
+      ion-label {
+        color: #9d9d9d;
+        font-size: 17px;
+      }
+
+      &-box {
+        align-items: center;
+        color: #9d9d9d;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        ion-item {
+            width: 80%;
+            margin-left: 10px;
+        }
+      }
+
+    }
+  }
+
+  .input-check {
+    padding-left: 0;
+
+    ion-label {
+      color: #da4641;
+      font-size: 1.5rem;
+    }
+
+    .checkbox-ios,
+    .checkbox-md {
+      color: #da4641;
+      font-size: 1rem;
+      margin: 9px 9px 9px 4px !important;
+
+      .checkbox-inner {
+        border-color: #da4641;
+        height: 0;
+        width: 0;
+      }
+
+      .checkbox-icon {
+        border-radius: 50%;
+        border: 2px solid #da4641;
+        height: 26px;
+        width: 26px;
+      }
     }
   }
 }
