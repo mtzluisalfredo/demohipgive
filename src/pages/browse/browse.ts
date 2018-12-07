@@ -75,4 +75,10 @@ export class BrowsePage {
     return 'assets/imgs/' + (index+1) + '.jpg';
   }
 
+  openDetail(i) {
+    console.log("​StoriesPage -> openDetail -> openDetail")
+    this.navCtrl.push('BrowseDetailPage', { imgIndex: i });
+
+  }
+
 }

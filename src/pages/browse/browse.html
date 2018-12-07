@@ -9,7 +9,7 @@
 
   </div>
   <div *ngFor="let levels of itemsLevels; let i=index">
-    <div *ngIf="!levels.donors === true" class="item-browse" [style.background-image]="'url(' + getBackgroundStyle(i) + ')'" style="background-size: cover;">
+    <div (click)="openDetail(i)" *ngIf="!levels.donors === true" class="item-browse" [style.background-image]="'url(' + getBackgroundStyle(i) + ')'" style="background-size: cover;">
       <div class="bg-black">
         <span class="title">Goal $56,56656</span>
         <span class="sub-title">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="levels.donors === true" class="item-browse w-donors" style="background-image: url('assets/imgs/1.jpg'); background-size: cover;">
+    <div (click)="openDetail(i)" *ngIf="levels.donors === true" class="item-browse w-donors" style="background-image: url('assets/imgs/1.jpg'); background-size: cover;">
       <div class="bg-black w-donors">
         <span class="title">Goal $56,56656</span>
         <span class="sub-title">

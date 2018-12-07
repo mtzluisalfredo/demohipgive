@@ -87,6 +87,6 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="com.moust.cordova.videoplayer" spec="https://github.com/moust/cordova-plugin-videoplayer.git" />
-    <allow-navigation href="http://192.168.1.75:8100" sessionid="45167fd0" />
+    <allow-navigation href="http://192.168.1.75:8100" sessionid="a160a0be" />
     <engine name="ios" spec="~4.5.5" />
 </widget>
