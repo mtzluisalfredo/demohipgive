@@ -29,6 +29,10 @@ export class InfoItemComponent {
     this.navCtrl.push('ProjectPage', {project: this.project});
   }
 
+  public getBackgroundStyle(i) {
+    return 'assets/imgs/' + (i+1) + '.jpg';
+  }
+
   public textEllipsis(str, maxLength, { side = "end", ellipsis = "..." } = {}) {
     if(str) {
 

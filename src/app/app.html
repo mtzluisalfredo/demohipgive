@@ -5,23 +5,18 @@
       <ion-title>Filters</ion-title>
     </ion-toolbar>
   </ion-header>
-
   <ion-content class="menu-one">
     <ion-list>
       <ion-item *ngFor="let categorie of resultCategories; let i=index">
-          <ion-label>{{categorie.name.en}}</ion-label>
+        <ion-label>{{categorie.name.en}}</ion-label>
         <ion-checkbox color="danger" [(ngModel)]="itemsLevelsOne[i]" (ionChange)="updateCucumber()"></ion-checkbox>
       </ion-item>
     </ion-list>
-
     <div class="btn-filters">
       <button (click)='clearFilterOne()' class="clear-btn" ion-button>Clear Filters</button>
-
       <button (click)='saveFilterOne()' ion-button>Save</button>
-
     </div>
   </ion-content>
-
 </ion-menu>
 
 <ion-menu side="right" [content]="content" id="menu2">
@@ -30,7 +25,6 @@
       <ion-title>Filters</ion-title>
     </ion-toolbar>
   </ion-header>
-
   <ion-content>
     <ion-list>
       <ion-item *ngFor="let countrie of resultCountries;let i=index">
@@ -50,17 +44,45 @@
         <ion-label range-right>100</ion-label>
       </ion-range>
     </ion-item>
-
     <div class="btn-filters">
       <button (click)='clearFilterOne()' class="clear-btn" ion-button>Clear Filters</button>
-
       <button (click)='saveFilterOne()' ion-button>Save</button>
-
     </div>
   </ion-content>
-
 </ion-menu>
 
+
+<ion-menu side="left" [content]="content" id="menuUser">
+  <ion-header no-shadow no-border class="f-one">
+    <ion-toolbar>
+      <ion-title>User</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <!-- <ion-list>
+      <ion-item *ngFor="let countrie of resultCountries;let i=index">
+        <ion-label>{{countrie}}</ion-label>
+        <ion-checkbox color="danger" [(ngModel)]="resultCountries[i]" (ionChange)="updateCucumber()"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item *ngFor="let categorie of resultCategories;let i=index">
+        <ion-label>{{categorie.name.en}}</ion-label>
+        <ion-checkbox color="danger" [(ngModel)]="itemsLevelsOne[i]" (ionChange)="updateCucumber()"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <ion-range dualKnobs="true" pin="true" [(ngModel)]="structure" (ionChange)="onChange($event)" color="danger">
+        <ion-label range-left>-0</ion-label>
+        <ion-label range-right>100</ion-label>
+      </ion-range>
+    </ion-item>
+    <div class="btn-filters">
+      <button (click)='clearFilterOne()' class="clear-btn" ion-button>Clear Filters</button>
+      <button (click)='saveFilterOne()' ion-button>Save</button>
+    </div> -->
+  </ion-content>
+</ion-menu>
 
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

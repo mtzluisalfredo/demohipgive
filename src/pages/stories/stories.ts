@@ -52,6 +52,11 @@ export class StoriesPage {
     this.menuCtrl.enable(true, 'menu2');
   }
 
+  openMenuUser() {
+    console.log("​StoriesPage -> openMenuUser -> openMenuUser")
+    this.menuCtrl.open('menuUser');
+  }
+
   public getBackgroundStyle(index) {
     return 'assets/imgs/' + (index+1) + '.jpg';
   }

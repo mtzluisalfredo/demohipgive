@@ -33,14 +33,14 @@
     <div class="img-blur" effect="fade" [ngStyle]="setMyStyle()"></div>
     <div class="img-blur" effect="fade" [ngStyle]="{'background-image': 'url(' + indexImg + ')'}"></div>
     <ion-slides loop (ionSlideDidChange)="slideChanged()" class="photos" spaceBetween="10" slidesPerView="1.3">
-      <ion-slide *ngFor="let project of dataProjects">
+      <ion-slide *ngFor="let project of dataProjects; let i=index">
         <info-item [project]="project"></info-item>
       </ion-slide>
     </ion-slides>
   </div>
   <ion-row style=" width: 100%; height: 100px; position: absolute; top: 370px; ">
     <ion-slides loop (ionSlideDidChange)="slideChanged()" class="photos" spaceBetween="10" slidesPerView="1.3">
-      <ion-slide *ngFor="let project of dataProjects">
+      <ion-slide *ngFor="let project of dataProjects; let i=index">
         <info-item [project]="project"></info-item>
       </ion-slide>
     </ion-slides>
@@ -57,7 +57,7 @@
   <!-- <div class="list-discover" *ngIf="dataProjects.length > 0">
     <item-list *ngFor="let project of dataProjects" [project]="project"></item-list>
   </div> -->
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+  <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+  </ion-infinite-scroll> -->
 </ion-content>

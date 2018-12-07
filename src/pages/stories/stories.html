@@ -1,9 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <ion-avatar item-start>
-        <img src="assets/imgs/1.jpg">
-      </ion-avatar>
+      <div (click)="openMenuUser()">
+        <ion-avatar item-start>
+          <img src="assets/imgs/1.jpg">
+        </ion-avatar>
+      </div>
     </ion-buttons>
 
     <ion-title>
@@ -12,7 +14,7 @@
     </ion-title>
 
     <ion-buttons end>
-      <button ion-button icon-only >
+      <button ion-button icon-only>
         <ion-icon name="notifications-outline"></ion-icon>
       </button>
     </ion-buttons>
@@ -25,12 +27,13 @@
   <div class="w-search">
     <ion-input placeholder="Search"></ion-input>
     <button (click)="openMenuOne()">
-      <ion-icon  name="ios-funnel-outline"></ion-icon>
+      <ion-icon name="ios-funnel-outline"></ion-icon>
     </button>
 
   </div>
   <div *ngFor="let levels of itemsLevels; let i=index">
-    <div (click)="openDetail()" class="item-browse" [style.background-image]="'url(' + getBackgroundStyle(i) + ')'" style="background-size: cover;">
+    <div (click)="openDetail()" class="item-browse" [style.background-image]="'url(' + getBackgroundStyle(i) + ')'"
+      style="background-size: cover;">
       <div class="bg-black">
         <ion-avatar item-start>
           <img src="assets/imgs/{{i+1}}.jpg">
