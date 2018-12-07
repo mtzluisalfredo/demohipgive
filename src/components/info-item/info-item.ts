@@ -29,7 +29,7 @@ export class InfoItemComponent {
   }
 
   public goDetail(){
-    this.navCtrl.push('ProjectPage', {project: this.project});
+    this.navCtrl.push('ProjectPage', {project: this.project, imgIndex: this.imgIndex});
   }
 
   public getBackgroundStyle(i) {

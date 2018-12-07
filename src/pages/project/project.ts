@@ -12,7 +12,7 @@ export class ProjectPage {
 
   mymodel: string;
   itemsLevels = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  project: any = {}
+  project: any = {};
   textHtml: string = '';
   feature_image: string;
 
@@ -20,6 +20,7 @@ export class ProjectPage {
   infoUpdates: any = false;
   infoDonors: any = false;
   listLevel: any = false;
+  imgIndex: any;
 
   constructor(
     public menuCtrl: MenuController,
@@ -28,6 +29,7 @@ export class ProjectPage {
     public navParams: NavParams,
     private videoPlayer: VideoPlayer) {
     this.project = this.navParams.get('project');
+    this.imgIndex = this.navParams.get('imgIndex');
     this.textHtml = this.project.content;
     console.log("​ProjectPage -> constructor -> this.project", this.project)
 
@@ -44,6 +46,10 @@ export class ProjectPage {
     console.log('ionViewDidLoad ProjectPage');
   }
 
+
+  public getBackgroundStyle(i) {
+    return 'assets/imgs/' + (i+1) + '.jpg';
+  }
 
   presentActionSheet() {
     console.log("​ProjectPage -> presentActionSheet -> presentActionSheet", this.actionSheetCtrl)
