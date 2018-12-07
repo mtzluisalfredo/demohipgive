@@ -1,25 +1,4 @@
-<ion-header>
-  <ion-navbar>
-    <ion-buttons left>
-        <div (click)="openMenuUser()">
-            <ion-avatar item-start>
-              <img src="assets/imgs/1.jpg">
-            </ion-avatar>
-          </div>
-    </ion-buttons>
-
-    <ion-title>
-      <span style="text-align: start; font-size: 11px;"> Page Title</span>
-      <span style="text-align: start">Page Title</span>
-    </ion-title>
-
-    <ion-buttons end>
-      <button ion-button icon-only (click)="openModal()">
-        <ion-icon name="notifications-outline"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
+<header-hg></header-hg>
 
 <ion-content>
   <ion-refresher pullMin="160" (ionRefresh)="doRefresh($event)">

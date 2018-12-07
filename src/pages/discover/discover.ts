@@ -58,11 +58,6 @@ export class DiscoverPage {
     );
   }
 
-  openMenuUser() {
-    this.menuCtrl.open('menuUser');
-  }
-
-
   doRefresh(refresher) {
     let resultAPI = null;
     this.apiAppProvider.getProjects(this.per_page, this.page).then(

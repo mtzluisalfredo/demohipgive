@@ -60,11 +60,6 @@ export class BrowsePage {
     this.menuCtrl.open();
   }
 
-
-  openMenuUser() {
-    this.menuCtrl.open('menuUser');
-  }
-
   menu1Active() {
     this.activeMenu = 'menu1';
     this.menuCtrl.enable(true, 'menu1');
