@@ -99,3 +99,15 @@
     background: rgba(0, 0, 0, 0.3);
   }
 }
+
+
+.btn-s-out {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 20px;
+
+  button {
+    background: red;
+  }
+}

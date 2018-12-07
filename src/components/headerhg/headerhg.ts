@@ -14,7 +14,7 @@ export class HeaderhgComponent {
 
   text: string;
 
-  constructor(    public menuCtrl: MenuController,) {
+  constructor( public menuCtrl: MenuController ) {
     console.log('Hello HeaderhgComponent Component');
     this.text = 'Hello World';
   }

@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, App, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { TabsPage } from './../pages/tabs/tabs'
+import { TabsPage } from './../pages/tabs/tabs';
 // import { ApiAppProvider } from '../../providers/api-app/api-app';
 import { ApiAppProvider } from './../providers/api-app/api-app';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  @ViewChild(Nav) nav: Nav;
   rootPage: any;
   itemsLevelsOne = [1, 2, 3, 4];
   itemsLevelsTwo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -20,11 +21,18 @@ export class MyApp {
   structure: any = { lower: 33, upper: 60 };
   valuesRange: any;
 
-  constructor(platform: Platform, public apiAppProvider: ApiAppProvider, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(
+    public app: App,
+    public menuCtrl: MenuController,
+    platform: Platform,
+    public apiAppProvider: ApiAppProvider,
+    statusBar: StatusBar,
+    splashScreen: SplashScreen
+  ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      const authToken = localStorage.getItem('authToken')
+      const authToken = localStorage.getItem('authToken');
       if (authToken) {
         this.rootPage = TabsPage;
       } else {
@@ -53,7 +61,10 @@ export class MyApp {
             if (Boolean(result)) {
               resultAPI = result;
               this.resultCategories = resultAPI;
-              console.log("​MyApp -> ionViewDidLoad -> this.resultCategories", this.resultCategories)
+              console.log(
+                '​MyApp -> ionViewDidLoad -> this.resultCategories',
+                this.resultCategories
+              );
               resultAPI = null;
             }
           },
@@ -71,17 +82,25 @@ export class MyApp {
   }
 
   updateCucumber() {
-    console.log("​MyApp -> updateCucumber -> updateCucumber")
-
+    console.log('​MyApp -> updateCucumber -> updateCucumber');
   }
 
   clearFilterOne() {
-    console.log("​MyApp -> clearFilterOne -> clearFilterOne")
-
+    console.log('​MyApp -> clearFilterOne -> clearFilterOne');
   }
 
   saveFilterOne() {
-    console.log("​MyApp -> saveFilterOne -> saveFilterOne")
+    console.log('​MyApp -> saveFilterOne -> saveFilterOne');
+  }
 
+  signOut() {
+    console.log('​MyApp -> signOut -> signOut', '');
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('key');
+    this.menuCtrl.close('menuUser');
+    this.nav.push('WelcomePage');
+
+    this.app.getActiveNav().setRoot('WelcomePage');
+    // this.navCtrl.setRoot(TabsPage);
   }
 }
