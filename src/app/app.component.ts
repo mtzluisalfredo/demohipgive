@@ -99,8 +99,6 @@ export class MyApp {
     localStorage.removeItem('key');
     this.menuCtrl.close('menuUser');
     this.nav.push('WelcomePage');
-
     this.app.getActiveNav().setRoot('WelcomePage');
-    // this.navCtrl.setRoot(TabsPage);
   }
 }

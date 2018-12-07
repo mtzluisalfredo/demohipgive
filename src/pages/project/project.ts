@@ -44,9 +44,6 @@ export class ProjectPage {
     console.log('ionViewDidLoad ProjectPage');
   }
 
-  openMenuUser() {
-    this.menuCtrl.open('menuUser');
-  }
 
   presentActionSheet() {
     console.log("​ProjectPage -> presentActionSheet -> presentActionSheet", this.actionSheetCtrl)

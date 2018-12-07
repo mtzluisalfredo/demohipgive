@@ -26,7 +26,4 @@ export class StoriesDetailPage {
     this.navCtrl.pop()
   }
 
-  openMenuUser() {
-    this.menuCtrl.open('menuUser');
-  }
 }
