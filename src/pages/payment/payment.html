@@ -143,6 +143,8 @@
                   <ion-label style="margin: 0px;margin-top: 10px;">$23.00</ion-label>
                 </ion-col>
               </ion-row>
+
+            </ion-grid>
               <ion-card class="paypal">
                 <ion-card-header>
                   <ion-icon ios="md-heart" md="md-heart" item-start></ion-icon> <span class="card-tittle">Matching Funds</span>
@@ -162,8 +164,8 @@
                     </ion-avatar>
                     <div class="title-btn-organitation">
                       <ion-title>
-                        <span style="text-align: start; color: gray;font-size: 1.5rem;">NATURE WILDLIFE RELEAF</span>
-                        <span style="text-align: start; font-size: 11px; color: gray;">MATCH UP TO</span>
+                        <span class="title-b" style="text-align: start; color: gray;font-size: 1.5rem;">NATURE WILDLIFE RELEAF</span>
+                        <span style="text-align: start; font-size: 11px; color: gray;">MATCH UP TO $300</span>
                       </ion-title>
                     </div>
                   </button>
@@ -174,8 +176,8 @@
                     </ion-avatar>
                     <div class="title-btn-organitation">
                       <ion-title>
-                        <span style="text-align: start; color: gray;font-size: 1.5rem;">NATURE WILDLIFE RELEAF</span>
-                        <span style="text-align: start; font-size: 11px; color: gray;">MATCH UP TO</span>
+                        <span class="title-b" style="text-align: start; color: gray;font-size: 1.5rem;">NATURE WILDLIFE RELEAF</span>
+                        <span style="text-align: start; font-size: 11px; color: gray;">MATCH UP TO $100</span>
                       </ion-title>
                     </div>
                   </button>
@@ -186,14 +188,21 @@
                     </ion-avatar>
                     <div class="title-btn-organitation">
                       <ion-title>
-                        <span style="text-align: start; color: gray;font-size: 1.5rem;">NATURE WILDLIFE RELEAF</span>
-                        <span style="text-align: start; font-size: 11px; color: gray;">MATCH UP TO</span>
+                        <span class="title-b" style="text-align: start; color: gray;font-size: 1.5rem;">NATURE WILDLIFE RELEAF</span>
+                        <span style="text-align: start; font-size: 11px; color: gray;">MATCH UP TO $200</span>
                       </ion-title>
                     </div>
                   </button>
                 </ion-card-content>
 
               </ion-card>
+
+            <ion-grid>
+
+              <ion-item class="input-check-anonim" no-lines>
+                  <ion-label>Make this Donation Anonymous</ion-label>
+                  <ion-checkbox color="gray" name="anonim" [(ngModel)]="anonim"></ion-checkbox>
+                </ion-item>
             </ion-grid>
             <button-hipgive [text]="'Donate $23.00'" padding-vertical></button-hipgive>
           </ion-row>

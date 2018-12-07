@@ -17,6 +17,7 @@ export class PaymentPage {
   showCard: boolean = false;
   subscribe: boolean = false;
   save: boolean = false;
+  anonim: boolean = true;
   menu: string = '';
   code: number;
   expiration: number;

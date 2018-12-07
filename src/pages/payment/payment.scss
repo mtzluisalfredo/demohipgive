@@ -221,6 +221,10 @@ page-payment {
         flex-direction: row;
         justify-content: flex-end;
 
+        input {
+          text-align: end;
+        }
+
         ion-item {
             width: 80%;
             margin-left: 10px;
@@ -259,10 +263,40 @@ page-payment {
     }
   }
 
+  .input-check-anonim {
+    padding-left: 0;
+
+    ion-label {
+      color: gray;
+      font-size: 1.7rem;
+    }
+
+    .checkbox-ios,
+    .checkbox-md {
+      color: gray;
+      font-size: 1rem;
+      margin: 9px 9px 9px 4px !important;
+
+      .checkbox-inner {
+        border-color: gray;
+        height: 0;
+        width: 0;
+      }
+
+      .checkbox-icon {
+        border-radius: 50%;
+        border: 2px solid gray;
+        height: 26px;
+        width: 26px;
+      }
+    }
+  }
+
   .paypal {
     border-radius: 6px;
     color: #a2a2a2;
     font-size: 1.3rem;
+    margin: auto;
 
     p {
       color: #a2a2a2;
@@ -294,6 +328,10 @@ page-payment {
     &.selected {
         img {
           border: 2px solid red;
+        }
+
+        .title-b {
+          color: red !important;
         }
     }
 
