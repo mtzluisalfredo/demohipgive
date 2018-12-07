@@ -29,55 +29,83 @@
 
 
 <ion-content padding>
-    <div style="margin-top: 10px; justify-content: center; display: flex;">
-        <button class="btn-organitation" ion-item text-wrap (click)="pageBack()">
-          <ion-icon ios="ios-arrow-back" md="ios-arrow-back" item-start></ion-icon>
-          <ion-avatar item-start>
-            <img src="./assets/imgs/1.jpg">
-          </ion-avatar>
-          <div class="title-btn-organitation">
-            <ion-title>
-              <span style="text-align: start; font-size: 11px; color: gray;">BACK TO</span>
-              <span style="text-align: start; color: gray;">TITLE PROJECT</span>
-            </ion-title>
-          </div>
-        </button>
+  <div style="margin-top: 10px; justify-content: center; display: flex;">
+    <button class="btn-organitation" ion-item text-wrap (click)="pageBack()">
+      <ion-icon ios="ios-arrow-back" md="ios-arrow-back" item-start></ion-icon>
+      <ion-avatar item-start>
+        <img src="./assets/imgs/1.jpg">
+      </ion-avatar>
+      <div class="title-btn-organitation">
+        <ion-title>
+          <span style="text-align: start; font-size: 11px; color: gray;">BACK TO</span>
+          <span style="text-align: start; color: gray;">TITLE PROJECT</span>
+        </ion-title>
       </div>
-      <ion-grid padding-vertical>
-        <ion-row padding-vertical>
-          <div class="text-money" padding-vertical>
-            <div class="text-money-top">You are abouth to donate</div>
-            <h1>$20.00</h1>
-            <div class="text-money-bottom">The power of a Dream</div>
-        </div>
-        </ion-row>
-        <ion-row>
-          <div class="text-money-method">
-            <h1>Choose payment Method</h1>
-          </div>
-        </ion-row>
-        <ion-row class="card-custom">
-            <button class="btn-payment" ion-item text-wrap no-lines>
-              <div class="title-btn-organitation">
-                <ion-title>
-                  <span style="text-align: start; color: red; font-size: 1.7rem;">DEFAULT PAYMENT METHOD</span>
-                  <span style="text-align: start; font-size: 11px; color: gray;">**** 1234 <span style="padding-left: 23px;">Exp. 00/00</span></span>
-                </ion-title>
-              </div>
-              <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
-            </button>
-            <button class="card-custom-item" ion-item text-wrap (click)="openCreditCard()">
-              <ion-label>
-                New credit / Debit Card
-              </ion-label>
-            </button>
-            <button class="card-custom-item" ion-item text-wrap (click)="openPaypal()">
-              <ion-label>
-                Paypal
-              </ion-label>
-            </button>
+    </button>
+  </div>
+  <ion-grid padding-vertical>
+    <ion-row padding-vertical>
+      <div class="text-money" padding-vertical>
+        <div class="text-money-top">You are abouth to donate</div>
+        <h1>$20.00</h1>
+        <div class="text-money-bottom">The power of a Dream</div>
+      </div>
+    </ion-row>
 
-        </ion-row>
-      </ion-grid>
+    <div *ngIf="showCard" style="margin-top: 10px; justify-content: center; display: flex; width: 75%;">
+      <button class="btn-organitation-back" ion-item text-wrap (click)="toggleCard()">
+        <ion-icon ios="ios-arrow-back" md="ios-arrow-back" item-start></ion-icon>
+        <div class="title-btn-organitation">
+          <ion-title>
+            <span style="text-align: start; color: gray;">Back to Donations Methods</span>
+          </ion-title>
+        </div>
+      </button>
+    </div>
+    <ion-row *ngIf="!showCard">
+      <div class="text-money-method">
+        <h1>Choose payment Method</h1>
+      </div>
+    </ion-row>
+    <ion-row *ngIf="!showCard" class="card-custom">
+      <button class="btn-payment" ion-item text-wrap no-lines>
+        <div class="title-btn-organitation">
+          <ion-title>
+            <span style="text-align: start; color: red; font-size: 1.7rem;">DEFAULT PAYMENT METHOD</span>
+            <span style="text-align: start; font-size: 11px; color: gray;">**** 1234 <span style="padding-left: 23px;">Exp.
+                00/00
+              </span></span>
+          </ion-title>
+        </div>
+        <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+      </button>
+      <button class="card-custom-item" ion-item text-wrap (click)="openCreditCard()">
+        <ion-label>
+          NEW CREDIT / DEBIT CARD
+        </ion-label>
+      </button>
+      <button class="card-custom-item" ion-item text-wrap (click)="openPaypal()">
+        <ion-label>
+          PAYPAL
+        </ion-label>
+      </button>
+
+    </ion-row>
+
+    <ion-row *ngIf="showCard" class="card-custom">
+        <ion-title>
+          CARD INFORMATION
+        </ion-title>
+        <div [ngSwitch]="menu">
+            <div *ngSwitchCase="'card'">
+              Credit card
+            </div>
+            <div *ngSwitchCase="'paypal'">
+              Paypal
+            </div>
+        </div>
+
+      </ion-row>
+  </ion-grid>
 
 </ion-content>

@@ -1,3 +1,165 @@
 page-credit-card {
+  ion-content {
+    background: linear-gradient(to right, rgba(237, 67, 60, 1) 0%, rgba(243, 155, 63, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed433c', endColorstr='#f39b3f',GradientType=1 );
+  }
 
+  ion-header ion-icon.back-button-icon.icon {
+    color: white;
+  }
+
+  ion-navbar .toolbar-content ion-title .toolbar-title {
+    width: 85%;
+    color: gray;
+  }
+
+  ion-avatar,
+  ion-avatar > img {
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .toolbar-title-custom {
+    display: flex;
+    overflow: visible;
+    position: relative;
+
+    span {
+      font-size: 11px;
+    }
+
+    .hello {
+      position: absolute;
+      top: -15px;
+    }
+
+    .subtitle {
+      font-size: 90%;
+      position: absolute;
+      top: -4px;
+    }
+  }
+
+  .toolbar-title-ios {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toolbar-ios ion-title {
+    padding: 0 50px 1px;
+  }
+
+  .toolbar-title-md {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-organitation {
+    border: 1px solid #c7c5c5;
+    border-radius: 10px;
+    width: 100%;
+
+    .title-btn-organitation {
+      display: flex;
+      flex-direction: column;
+    }
+
+    ion-avatar {
+      margin-right: 0 !important;
+    }
+  }
+
+  .btn-organitation-back {
+    border: 1px solid #c7c5c5;
+    border-radius: 10px;
+    padding-left: 6px;
+    width: 100%;
+
+    .title-btn-organitation {
+      display: flex;
+      flex-direction: column;
+    }
+
+    ion-icon {
+      color: #9d9d9d;
+      margin-right: 10px !important;
+    }
+
+    ion-avatar {
+      margin-right: 0 !important;
+    }
+
+    .item-inner {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+
+      .toolbar-title {
+        font-size: 1.6rem;
+        padding: 0;
+      }
+    }
+  }
+
+  ion-icon {
+    color: #9d9d9d;
+    margin-right: 15px !important;
+  }
+
+  .text-money {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+
+    &-top {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: 6rem;
+      font-weight: 700;
+    }
+
+    &-bottom {
+      font-size: 1.7rem;
+    }
+
+    &-method {
+      display: flex;
+      justify-content: center;
+      padding-top: 17%;
+      width: 100%;
+
+      h1 {
+        color: white;
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  .btn-payment {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .card-custom {
+    &-item {
+      border-top: 1px solid #dedede;
+      color: #9d9d9d;
+
+      .item-inner {
+        border-bottom: 0 !important;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+    }
+  }
 }
