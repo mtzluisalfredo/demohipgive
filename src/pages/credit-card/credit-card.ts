@@ -22,4 +22,8 @@ export class CreditCardPage {
     console.log('ionViewDidLoad CreditCardPage');
   }
 
+  pageBack() {
+    this.navCtrl.pop();
+  }
+
 }

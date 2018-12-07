@@ -14,6 +14,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'payment.html',
 })
 export class PaymentPage {
+  showCard: boolean = false;
+  menu: string = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -23,15 +25,20 @@ export class PaymentPage {
   }
 
   openPaypal() {
-    this.navCtrl.push('PaypalPage');
+    this.menu = 'paypal';
+    this.toggleCard();
   }
 
   openCreditCard() {
-    this.navCtrl.push('CreditPagePage');
+    this.menu = 'card';
+    this.toggleCard();
+  }
+  toggleCard(){
+    this.showCard = !this.showCard;
   }
 
   pageBack() {
-    this.navCtrl.pop()
+    this.navCtrl.pop();
   }
 
 }

@@ -22,4 +22,8 @@ export class PaypalPage {
     console.log('ionViewDidLoad PaypalPage');
   }
 
+  pageBack() {
+    this.navCtrl.pop();
+  }
+
 }
