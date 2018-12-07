@@ -1,0 +1,205 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <ion-avatar item-start>
+        <img src="assets/imgs/1.jpg">
+      </ion-avatar>
+    </ion-buttons>
+
+    <div>
+      <ion-title>
+        <span style="text-align: start; font-size: 11px;"> Page Title</span>
+        <span style="text-align: start">Page Title</span>
+      </ion-title>
+    </div>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row style="background-image: url('assets/imgs/photo_1.jpg'); background-size: cover;" class="home-logo">
+    <div class="w-btn-actions-page">
+      <div (click)="presentActionSheet()" class="share-btn">
+        <ion-icon name="md-share">
+          <span class="label-share">Share This Project</span>
+        </ion-icon>
+      </div>
+      <div (click)="pageBack()" class="close-btn">
+        <ion-icon name="md-close"></ion-icon>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <h3>Title project</h3>
+      <span>$4,592</span> of $50,000 <span>Raised</span>
+    </div>
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+  </ion-row>
+
+  <div class="header-project">
+    <div>
+      <div class="info-give">
+        <span>This project ends in</span>
+        <span>10 Days 37 Min 13 Hrs 27 Sec</span>
+      </div>
+      <div class="wrapper-give">
+        <ion-input type="number" placeholder="$0.00"></ion-input>
+        <button ion-button>GIVE</button>
+      </div>
+      <div style="margin-top: 10px;">
+        <button (click)="openListLevel()" style="border: 1px solid #c7c5c5;
+              border-radius: 10px;"
+          ion-item text-wrap>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-weight: bold; color: black;">
+              Donation Levels</span>
+          </div>
+          <ion-icon *ngIf="!listLevel" ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+          <ion-icon *ngIf="listLevel" name="ios-arrow-up" item-end></ion-icon>
+        </button>
+      </div>
+      <div *ngIf="!listLevel" class="text-levels">
+        <span>Open Virtual Terminal</span>
+      </div>
+      <div *ngIf="listLevel">
+        <div class="list-levels">
+          <div *ngFor="let levels of itemsLevels" class="item-levels">
+            <span class="title">Be a Hero</span>
+            <span class="donation">$100,000</span>
+            <span class="description">Lorem Ipsum is simply dummy text of the printing and.</span>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 25px;" (click)="openListLevel()">
+          Back to project
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!listLevel" style="margin-top: 10px; justify-content: center; display: flex;">
+    <button class="btn-organitation" ion-item text-wrap>
+      <ion-avatar item-start>
+        <img src="assets/imgs/1.jpg">
+      </ion-avatar>
+      <div class="title-btn-organitation">
+        <ion-title>
+          <span style="text-align: start; font-size: 11px; color: gray;">ORGANITATION</span>
+          <span style="text-align: start; color: gray;">TITLE PROJECT</span>
+        </ion-title>
+      </div>
+      <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+    </button>
+  </div>
+
+  <div *ngIf="!listLevel" class="g-notifications">
+    <div style="width: 70%;">
+      <ion-label class="title">Notification</ion-label>
+      <p class="subtitle-noti">Subscribing to this project will send
+        you a notification any time this project is updated</p>
+    </div>
+    <div style="width: 30%;">
+      <ion-item>
+        <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
+      </ion-item>
+    </div>
+  </div>
+
+  <div *ngIf="!listLevel" class="send-msn">
+    <button class="border-red" ion-item text-wrap>
+      <div style="display: flex; flex-direction: column;">
+        <span style="font-weight: bold; color: red;">
+          Send us message</span>
+      </div>
+      <ion-icon color="danger" ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+    </button>
+  </div>
+
+  <ion-grid *ngIf="!listLevel" no-padding>
+    <ion-row class="item-s-h">
+      <ion-row class="border-gray  row-w-h-s" text-center>
+        <button (click)="openAbout()" ion-item text-wrap>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-weight: bold; color: gray;">
+              About</span>
+          </div>
+          <ion-icon *ngIf="!infoAbout" color="danger" name="add" item-end></ion-icon>
+          <ion-icon *ngIf="infoAbout" color="danger" name="remove" item-end></ion-icon>
+        </button>
+        <ion-grid class="grid-contend" *ngIf="infoAbout">
+          <ion-row class="lista_dos">
+            <ion-col col-12 class="check-text">
+              <div>
+                <ion-label>
+                  <p [innerHtml]="textHtml" style=" text-align: justify; margin-top: 0px; "></p>
+                </ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="!listLevel" no-padding>
+    <ion-row class="item-s-h">
+      <ion-row class="border-gray  row-w-h-s" text-center>
+        <button (click)="openUpdates()" ion-item text-wrap>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-weight: bold; color: gray;">
+              Updates</span>
+          </div>
+          <ion-icon *ngIf="!infoUpdates" color="danger" name="add" item-end></ion-icon>
+          <ion-icon *ngIf="infoUpdates" color="danger" name="remove" item-end></ion-icon>
+        </button>
+        <ion-grid class="grid-contend" *ngIf="infoUpdates">
+          <ion-row class="lista_dos">
+            <ion-col col-12 class="check-text">
+              <ion-card-content>
+                <h3>This is the Project Update Title</h3>
+                <span>Updated by...</span>
+                <object data="https://www.youtube.com/embed/K1CxoMOepdc?autoplay=1">
+                </object>
+              </ion-card-content>
+              <!-- <div>
+                <ion-label (click)="openVideo()">Videos</ion-label>
+              </div> -->
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="!listLevel" no-padding>
+    <ion-row class="item-s-h">
+      <ion-row class="border-gray  row-w-h-s" text-center>
+        <button (click)="openDonors()" ion-item text-wrap>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-weight: bold; color: gray;">
+              Donors</span>
+          </div>
+          <ion-icon *ngIf="!infoDonors" color="danger" name="add" item-end></ion-icon>
+          <ion-icon *ngIf="infoDonors" color="danger" name="remove" item-end></ion-icon>
+        </button>
+        <ion-grid class="grid-contend" *ngIf="infoDonors">
+          <ion-row *ngFor="let item of itemsLevels" class="list-donors">
+            <ion-avatar class="photo-donors" item-start>
+              <img src="assets/imgs/1.jpg">
+            </ion-avatar>
+            <div style=" display: flex; flex-direction: column; ">
+              <ion-label class="title">Donor name</ion-label>
+              <ion-label>date</ion-label>
+            </div>
+          </ion-row>
+        </ion-grid>
+      </ion-row>
+    </ion-row>
+  </ion-grid>
+  <div style="margin: 20px;"></div>
+</ion-content>

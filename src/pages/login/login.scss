@@ -1,0 +1,149 @@
+page-login {
+  ion-content {
+    background-image: url("/assets/imgs/2.jpg");
+    background-repeat: no-repeat;
+
+    .scroll-content {
+      padding-bottom: 0 !important;
+    }
+  }
+
+  .home-logo {
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  .card-content {
+    &-md {
+      padding: 0;
+    }
+
+    &-ios {
+      padding: 0;
+    }
+  }
+
+  .btn-center {
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+
+    .btn-login {
+      margin: 0;
+      width: 90%;
+    }
+  }
+
+  .name-page {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 0;
+    text-align: start;
+  }
+
+  .btn-reset {
+    color: red;
+    font-weight: bold;
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .btn-or {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .line-or {
+    background: #545252;
+    height: 1px;
+    width: 35%;
+  }
+
+  .btn-login-social {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 60px;
+
+    .btn {
+      align-items: center;
+      border-radius: 10px;
+      color: white;
+      display: flex;
+      font-size: 25px;
+      height: 50px;
+      justify-content: center;
+      width: 40%;
+
+      &-fb {
+        background: #1b51ba;
+      }
+
+      &-google {
+        background: #e93f33;
+      }
+    }
+  }
+
+  .btn-sing-up {
+    color: gray;
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+
+    .signup {
+      color: red;
+    }
+  }
+
+  ion-input {
+    background: white !important;
+    border: 1px solid gray !important;
+  }
+
+  .name-or {
+    color: #545252;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px 20px;
+  }
+
+  ion-card.card {
+    box-shadow: none;
+    background: rgba(232, 230, 230, 0.9px);
+    border-radius: 10px;
+    z-index: 100;
+  }
+
+  .item {
+    background: rgba(232, 230, 230, 0px);
+    border: medium none;
+  }
+
+  ion-input {
+    border-bottom: #FD4D73 solid 1px;
+  }
+
+  h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3em;
+    font-weight: lighter;
+    color: #fff;
+  }
+
+  .padding-btns {
+    margin-bottom: 180px;
+  }
+
+  .item-ios {
+    padding-left: 0;
+  }
+
+  .text-input-ios {
+    padding-left: 5px;
+  }
+
+
+}

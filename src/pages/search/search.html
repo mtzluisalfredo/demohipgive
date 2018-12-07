@@ -1,0 +1,56 @@
+<ion-content>
+    <span class="dot-red"></span>
+    <span class="dot-yellow"></span>
+    <span class="dot-back"></span>
+    <div class="title-page">
+        <span class="title">Search</span>
+        <ion-searchbar item-end [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)"
+            (ionCancel)="onCancel($event)">
+        </ion-searchbar>
+    </div>
+    <ion-grid style=" margin-top: 130px; ">
+        <ion-row>
+            <ion-col (click)='openDetail()' style="background-image: url('./../../assets/imgs/photo_3.jpg'); background-size: cover;"
+                class="col-search" col-5>
+                <div class="content-item-label"><span>Category 1</span></div>
+            </ion-col>
+            <ion-col (click)='openDetail()' class="col-search" col-5>
+                <div class="content-item-label"><span>Category 2</span></div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col (click)='openDetail()' class="col-search" col-5>
+                <div class="content-item-label"><span>Category 3</span></div>
+            </ion-col>
+            <ion-col (click)='openDetail()' class="col-search" col-5>
+                <div class="content-item-label"><span>Category 4</span></div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col (click)='openDetail()' class="col-search" col-5>
+                <div class="content-item-label"><span>Category 5</span></div>
+            </ion-col>
+            <ion-col (click)='openDetail()' class="col-search" col-5>
+                <div class="content-item-label"><span>Category 6</span></div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col (click)='openDetail()' class="col-search" col-5>
+                <div class="content-item-label"><span>Category 7</span></div>
+            </ion-col>
+            <ion-col (click)='openDetail()' class="col-search" col-5>
+                <div class="content-item-label"><span>Category 8</span></div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col (click)='openDetail()' class="col-search" col-5>
+                <div class="content-item-label"><span>Category 9</span></div>
+            </ion-col>
+            <ion-col (click)='openDetail()' class="col-search" col-5>
+                <div class="content-item-label"><span>Category 10</span></div>
+            </ion-col>
+        </ion-row>
+
+
+    </ion-grid>
+</ion-content>

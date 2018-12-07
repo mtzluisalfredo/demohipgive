@@ -1,0 +1,100 @@
+page-messages-detail {
+  .dot-red {
+    height: 70vh;
+    width: 100vh;
+    background-color: #ed7566;
+    border-radius: 50%;
+    position: absolute;
+    top: -200px;
+    left: -80px;
+  }
+
+  .dot-back {
+    height: 70vh;
+    width: 70vh;
+    background-color: red;
+    position: absolute;
+    top: -330px;
+    left: -50px;
+    transform: rotate(-110deg);
+  }
+
+  .dot-yellow {
+    height: 70vh;
+    width: 100vh;
+    background-color: #f4aa33;
+    border-radius: 50%;
+    position: absolute;
+    top: -145px;
+    left: -5px;
+    transform: rotate(15deg);
+  }
+
+  .w-messages {
+    background: white;
+    height: 100%;
+    margin: 10px;
+    margin-top: 40px;
+    border-radius: 5px;
+    padding-top: 25px;
+
+    .item-md {
+      margin-bottom: 5px;
+    }
+
+    .item-md ion-avatar[item-left],
+    .item-md ion-thumbnail[item-left],
+    .item-md ion-avatar[item-start],
+    .item-md ion-thumbnail[item-start] {
+      margin: 7px;
+    }
+
+    .item-ios ion-avatar[item-left],
+    .item-ios ion-thumbnail[item-left],
+    .item-ios ion-avatar[item-start],
+    .item-ios ion-thumbnail[item-start] {
+      margin: 7px;
+    }
+
+    .list-ios > .item-block:first-child {
+      border-top: 0.55px solid white;
+    }
+
+    .list-md .item-block .item-inner {
+      border-bottom: 1px solid white;
+    }
+
+    .list-ios .item-block .item-inner {
+      border-bottom: 0.55px solid white;
+      margin-bottom: 5px;
+    }
+
+    .list-ios > .item-block:last-child,
+    .list-ios > .item-wrapper:last-child .item-block {
+      border-bottom: 0.55px solid white;
+    }
+
+    .text-receptor {
+      .item-inner {
+        .input-wrapper {
+          background: rgb(207, 207, 207);
+          border-radius: 10px;
+          border-bottom-left-radius: 0px;
+          padding-left: 5px;
+        }
+      }
+    }
+
+    .text-transmitter {
+      text-align: right;
+
+      .item-inner {
+        .input-wrapper {
+          background: red;
+          border-radius: 10px;
+          border-bottom-right-radius: 0px;
+        }
+      }
+    }
+  }
+}

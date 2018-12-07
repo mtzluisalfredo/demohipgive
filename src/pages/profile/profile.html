@@ -1,0 +1,163 @@
+<ion-content>
+  <span class="dot-red"></span>
+  <span class="dot-yellow"></span>
+  <span class="dot-back"></span>
+
+  <div class="tabs-profile">
+    <div class="header-avatar">
+      <div class="w-avatar">
+        <ion-avatar item-start>
+          <img src="./../../assets/imgs/photo_1.jpg">
+          <span class="i-camera">
+            <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+          </span>
+        </ion-avatar>
+      </div>
+      <div class="w-name">
+        <div class="w-item-name">
+          <span class="title-header">Margarita</span>
+          <span>Margarita</span>
+        </div>
+        <div class="w-item-found">
+          <div style=" display: flex; flex: 1; width: 90px; border-right: 1px solid #d4d2d2; "><span style=" padding-right: 5px; ">4
+              Donations</span></div>
+          <div style=" margin-left: 5px; "><span>$54,4095 Funded</span></div>
+        </div>
+      </div>
+    </div>
+    <ion-segment style=" margin-top: 5px; " [(ngModel)]="mymodel">
+      <ion-segment-button value="donations">
+        Donations
+      </ion-segment-button>
+      <ion-segment-button value="notifications">
+        Notifications
+      </ion-segment-button>
+      <ion-segment-button value="general">
+        General
+      </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="mymodel">
+      <div class="model-general" *ngSwitchCase="'general'">
+        <p class="title">Account Information</p>
+        <form (ngSubmit)="logForm()">
+          <ion-item>
+            <ion-label color="dark" stacked>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="todo.name" name="nameInput"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="dark" stacked>First Name</ion-label>
+            <ion-input type="text" [(ngModel)]="todo.firstName" name="firstNameInput"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="dark" stacked>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="todo.email" name="emailInput"></ion-input>
+          </ion-item>
+          <p class="title">Security</p>
+          <ion-item class="authentication">
+            <ion-label>Two-Factor Authentication
+              <ion-label class="label-sub">lorem ipsum</ion-label>
+            </ion-label>
+            <ion-toggle></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label color="dark" stacked>Phone #</ion-label>
+            <ion-input type="phone" [(ngModel)]="todo.phone" name="phoneInput"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="dark" stacked>Change Password</ion-label>
+            <ion-input type="password" [(ngModel)]="todo.password" name="passwordInput"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="dark" stacked>Confirm Password</ion-label>
+            <ion-input type="password" [(ngModel)]="todo.confirmPassword" name="confirmPasswordInput"></ion-input>
+          </ion-item>
+          <button class="btn-send" ion-button type="submit" block>Save Password</button>
+        </form>
+      </div>
+      <div class="notifications" *ngSwitchCase="'notifications'">
+        <ion-list>
+          <ion-item>
+            <ion-label>Direct Messages
+              <ion-label class="label-sub">lorem ipsum</ion-label>
+            </ion-label>
+            <ion-toggle [(ngModel)]="messages"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Completed Projects
+              <ion-label class="label-sub">lorem ipsum</ion-label>
+            </ion-label>
+            <ion-toggle [(ngModel)]="completed"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>New Campaign
+              <ion-label class="label-sub">lorem ipsum</ion-label>
+            </ion-label>
+            <ion-toggle [(ngModel)]="campaign"></ion-toggle>
+          </ion-item>
+        </ion-list>
+        <div class="list-categories">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Category 1</ion-label>
+                  <ion-checkbox [(ngModel)]="pepperoni1"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Category 2</ion-label>
+                  <ion-checkbox [(ngModel)]="pepperoni2"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Category 1</ion-label>
+                  <ion-checkbox [(ngModel)]="pepperoni3"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Category 2</ion-label>
+                  <ion-checkbox [(ngModel)]="pepperoni4"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Category 1</ion-label>
+                  <ion-checkbox [(ngModel)]="pepperoni5"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  <ion-label>Category 2</ion-label>
+                  <ion-checkbox [(ngModel)]="pepperoni6"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+      <div *ngSwitchCase="'donations'">
+        <div>
+          <button *ngFor="let levels of itemsLevels" ion-item text-wrap>
+            <div style="display: flex; flex-direction: column;">
+              <span style="font-weight: bold; color: black; font-size: 13px;">
+                Grant to 5 Children of Oncology and their Dad to go to...</span>
+              <span style="font-size: 10px;"> Donation of $1,222.00</span>
+            </div>
+            <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

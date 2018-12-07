@@ -1,0 +1,24 @@
+<ion-item (click)='goDetail()' text-wrap>
+  <ion-thumbnail item-start>
+    <img src="assets/imgs/{{feature_image}}.jpg">
+    <div class="donate-item"> <span>{{goal}}</span></div>
+  </ion-thumbnail>
+  <h2 style="font-weight: bold;">{{nameProject}}</h2>
+  <div style="font-size: 13px;color: gray;font-weight: bold;">
+    <div style="display: flex;">
+      <div style="flex: 1.5;">
+        <ion-icon name="pin"></ion-icon>
+        <span>{{addressProject}}</span>
+      </div>
+    </div>
+    <div class="progress" style="bottom: -10px;width: 100%;left: -5px;margin: 5px 0;">
+      <div class="progress-bar">
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div style="flex: 1.5;">
+        <span>$67,9844 Raised</span>
+      </div>
+    </div>
+  </div>
+</ion-item>

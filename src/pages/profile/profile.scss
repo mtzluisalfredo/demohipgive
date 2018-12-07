@@ -1,0 +1,256 @@
+page-profile {
+  $text-input-highlight-color-valid: white;
+
+  .dot-red {
+    height: 70vh;
+    width: 100vh;
+    background-color: #ed7566;
+    border-radius: 50%;
+    position: absolute;
+    top: -200px;
+    left: -80px;
+  }
+
+  .dot-back {
+    height: 70vh;
+    width: 70vh;
+    background-color: red;
+    position: absolute;
+    top: -330px;
+    left: -50px;
+    transform: rotate(-110deg);
+  }
+
+  .dot-yellow {
+    height: 70vh;
+    width: 100vh;
+    background-color: #f4aa33;
+    border-radius: 50%;
+    position: absolute;
+    top: -145px;
+    left: -5px;
+    transform: rotate(15deg);
+  }
+
+  .scroll-content {
+    justify-content: center;
+    display: flex;
+  }
+
+  .tabs-profile {
+    position: absolute;
+    top: 100px;
+    width: 90%;
+    background: white;
+    border-radius: 5px;
+  }
+
+  .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+    border-color: white;
+    opacity: 1;
+    color: red;
+  }
+
+  .segment-md .segment-button {
+    border-bottom-color: white;
+    color: gray;
+  }
+
+  .segment-ios .segment-button.segment-activated {
+    color: red;
+    background-color: white;
+    opacity: 1;
+    transition: 100ms all linear;
+  }
+
+  .segment-ios .segment-button {
+    border-color: white;
+    color: gray;
+  }
+
+  .item-ios[detail-push] .item-inner,
+  button.item-ios:not([detail-none]) .item-inner,
+  a.item-ios:not([detail-none]) .item-inner {
+    background-image: none;
+    padding-right: 10px;
+  }
+
+  .header-avatar {
+    display: flex;
+    margin-top: -55px;
+    padding: 10px;
+
+    .w-avatar {
+      ion-avatar {
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+        }
+
+        .i-camera {
+          position: absolute;
+          top: 25px;
+          background: white;
+          padding: 9px;
+          border-radius: 50%;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          color: gray;
+          left: 75px;
+          border: 0.21px solid gray;
+        }
+      }
+    }
+
+    .w-name {
+      .w-item-name {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        color: white;
+      }
+
+      .w-item-found {
+        display: flex;
+        flex-direction: row;
+        padding-left: 8px;
+        color: gray;
+        margin-top: 10px;
+        font-size: 13px;
+      }
+
+      .title-header {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .list-md .item-block .item-inner {
+    border-bottom: 1px solid white;
+  }
+
+  .list-ios .item-block .item-inner {
+    border-bottom: 0.55px solid white;
+  }
+
+  .list-ios > .item-block:first-child {
+    border-top: 0.55px solid white;
+  }
+
+  .list-ios > .item-block:last-child,
+  .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0.55px solid white;
+  }
+
+  .model-general {
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 5px;
+      margin: 0px;
+      margin-left: 15px;
+    }
+  }
+
+  .item-md.item-block .item-inner {
+    padding-right: 8px;
+    border-bottom: 1px solid white;
+  }
+
+  .item-input ion-input,
+  .item-input ion-textarea {
+    position: static;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .item-md.item-input.item-input-has-focus .item-inner,
+  .item-md.item-input.input-has-focus .item-inner {
+    border-bottom-color: white;
+  }
+
+  .notifications {
+    .label-sub {
+      color: gray;
+      font-size: 12px;
+    }
+
+    .label-ios {
+      margin: 5px 8px 5px 0;
+    }
+
+    .label-md {
+      margin: 5px 8px 5px 0;
+    }
+  }
+
+  .item-ios.item-block .item-inner {
+    padding-right: 8px;
+    padding-right: 8px;
+    border-bottom: 0.55px solid white;
+  }
+
+  .item-md.item-input.item-input-has-focus .item-inner,
+  .item-md.item-input.input-has-focus .item-inner {
+    border-bottom-color: white;
+    box-shadow: inset 0 -1px 0 0 white;
+  }
+
+  .authentication {
+    .label-md {
+      margin: 5px 8px 5px 0;
+    }
+
+    .label-ios {
+      margin: 5px 8px 5px 0;
+    }
+  }
+
+  .btn-send {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 50%;
+    display: flex;
+    position: absolute;
+    right: 10px;
+    background: red;
+  }
+
+  .list-categories {
+    .col {
+      padding: 0;
+      position: relative;
+      width: 100%;
+      margin: 0;
+      min-height: 1px;
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+
+    .item.item-md .checkbox-md {
+      position: static;
+      display: block;
+      margin: 4px;
+    }
+
+    .item-ios {
+      padding-left: 0;
+      border-radius: 0;
+      position: relative;
+      font-size: 1.7rem;
+      color: #000;
+      background-color: #fff;
+      transition: background-color 200ms linear;
+    }
+
+    .item.item-ios .checkbox-ios {
+      position: static;
+      display: block;
+      margin: 4px;
+    }
+  }
+}

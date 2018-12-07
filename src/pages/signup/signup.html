@@ -1,0 +1,76 @@
+<ion-content>
+  <ion-row class="home-logo">
+    <ion-img width="80%" height="75" src="./assets/imgs/hipgive_logo.png"></ion-img>
+  </ion-row>
+  <div *ngIf="createdUser.status === 'null' || createdUser.status === 'error'" class="btn-login-social">
+    <span class="btn btn-fb" (click)='loginFB()'>
+      <ion-icon name="logo-facebook"></ion-icon>
+    </span>
+    <span class="btn btn-google" (click)='loginFB()'>
+      <ion-icon name="logo-googleplus"></ion-icon>
+    </span>
+  </div>
+  <div *ngIf="createdUser.status === 'null' || createdUser.status === 'error'" class="btn-get-media">
+    <span>get started quickly with social media.</span>
+  </div>
+  <div *ngIf="createdUser.status === 'null' || createdUser.status === 'error'" class="btn-or">
+    <span class="line-or"></span>
+    <span class="name-or">or</span>
+    <span class="line-or"></span>
+  </div>
+  <ion-card>
+    <ion-card-header *ngIf="createdUser.status === 'null' || createdUser.status === 'error'" class="name-page">
+      Sign up with Email
+    </ion-card-header>
+    <ion-card-content style="text-align: center;" *ngIf="createdUser.status === 'success'">
+      <img with='80%' src='{{imgGif}}' />
+      <h1>Please check your email to active your account.</h1>
+      <button-hipgive type="submit" [text]="'back'" [myCallback]="goBack.bind(this)"></button-hipgive>
+    </ion-card-content>
+    <ion-card-content *ngIf="createdUser.status === 'null' || createdUser.status === 'error'">
+      <form #signUpForm="ngForm" (ngSubmit)="actionSignUp()" autocomplete="off">
+        <ion-list class="form-login" inset>
+          <ion-label style="margin: 0px;margin-top: 10px;">First Name</ion-label>
+          <ion-item class="input-app" no-line style="margin-top: 5px;">
+            <ion-input placeholder="First Name" type="text" name="firstName" [(ngModel)]="profile.firstName"
+              autocorrect="off" autocapitalize="off" required></ion-input>
+          </ion-item>
+
+          <ion-label style="margin: 0px;margin-top: 10px;">Last Name</ion-label>
+          <ion-item class="input-app" no-line style="margin-top: 5px;">
+            <ion-input placeholder="Last Name" type="text" name="lastName" [(ngModel)]="profile.lastName" autocorrect="off"
+              autocapitalize="off" required></ion-input>
+          </ion-item>
+
+          <ion-label style="margin: 0px;margin-top: 10px;">Email</ion-label>
+          <ion-item class="input-app" no-line style="margin-top: 5px;">
+            <ion-input placeholder="Email" type="email" name="email" [(ngModel)]="profile.email" autocorrect="off"
+              autocapitalize="off" required></ion-input>
+          </ion-item>
+
+          <div class="btn-or" style="justify-content: start;">
+            <span class="line-or line-region"></span>
+          </div>
+
+          <ion-label style="margin: 0px;margin-top: 10px;">Region</ion-label>
+          <ion-item class="input-select">
+            <ion-label>Region</ion-label>
+            <ion-select name="region" [(ngModel)]="profile.region">
+              <ion-option *ngFor="let country of countries" [value]="country.name">{{country.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-label style="margin: 0px;margin-top: 10px;">Lenguage</ion-label>
+          <ion-item class="input-select">
+            <ion-label>Lenguage</ion-label>
+            <ion-select name="lenguage" [(ngModel)]="profile.lenguage">
+              <ion-option value="spanish">Spanish</ion-option>
+              <ion-option value="english">English</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <button-hipgive type="submit" [text]="'Sign up'"></button-hipgive>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

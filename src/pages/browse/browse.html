@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <ion-avatar item-start>
+        <img src="assets/imgs/1.jpg">
+      </ion-avatar>
+    </ion-buttons>
+
+    <ion-title>
+      <span style="text-align: start; font-size: 11px;"> Page Title</span>
+      <span style="text-align: start">User name</span>
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="w-search">
+    <ion-input placeholder="Search"></ion-input>
+    <button (click)="openMenuTwo()">
+      <ion-icon name="ios-funnel-outline"></ion-icon>
+    </button>
+
+  </div>
+  <div *ngFor="let levels of itemsLevels; let i=index">
+    <div *ngIf="!levels.donors === true" class="item-browse" [style.background-image]="'url(' + getBackgroundStyle(i) + ')'" style="background-size: cover;">
+      <div class="bg-black">
+        <span class="title">Goal $56,56656</span>
+        <span class="sub-title">
+          <ion-icon name="pin"></ion-icon> <span>Zapopan, jalisco</span>
+        </span>
+        <div class="title-d">
+          <span>Tile</span>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+              <span class="sr-only">70% Complete</span>
+            </div>
+          </div>
+          <span class="raised-title">$45,244 <span>Raised</span></span>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="levels.donors === true" class="item-browse w-donors" style="background-image: url('assets/imgs/1.jpg'); background-size: cover;">
+      <div class="bg-black w-donors">
+        <span class="title">Goal $56,56656</span>
+        <span class="sub-title">
+          Zapopan, jalisco
+        </span>
+        <div class="title-d">
+          Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el
+          texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se
+          dedica a...
+        </div>
+        <div class="items-do">
+          <ion-avatar *ngFor="let item of levels.amount; let k=index" item-start>
+            <img src="assets/imgs/1.jpg">
+          </ion-avatar>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

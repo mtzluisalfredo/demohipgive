@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-row class="home-logo">
+    <ion-img width="80%" height="75" src="./assets/imgs/hipgive_logo.png"></ion-img>
+  </ion-row>
+  <ion-card>
+    <ion-card-header class="name-page">
+      Login
+    </ion-card-header>
+    <ion-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+        <ion-list class="form-login" inset>
+          <ion-label style="margin: 0px;margin-top: 10px;">Email</ion-label>
+          <ion-item class="input-app" no-line style="margin-top: 5px;">
+            <ion-input placeholder="Email" type="email" name="email" [(ngModel)]="username" autocorrect="off"
+              autocapitalize="off" required></ion-input>
+          </ion-item>
+          <ion-label style="margin: 0px;margin-top: 10px;">Password</ion-label>
+          <ion-item class="input-app" no-line style="margin-top: 5px;">
+            <ion-input placeholder="Password" type="password" name="password" [(ngModel)]="password" required></ion-input>
+          </ion-item>
+        </ion-list>
+        <button-hipgive type="submit" [text]="'Login'"></button-hipgive>
+      </form>
+      <div class="btn-reset">
+        <span (click)='resetPassword()'>Forgot Password</span>
+      </div>
+      <div class="btn-or">
+        <span class="line-or"></span>
+        <span class="name-or">or</span>
+        <span class="line-or"></span>
+      </div>
+      <div class="btn-login-social">
+        <span class="btn btn-fb" (click)='loginFB()'>
+          <ion-icon name="logo-facebook"></ion-icon>
+        </span>
+        <span class="btn btn-google" (click)='loginFB()'>
+          <ion-icon name="logo-googleplus"></ion-icon>
+        </span>
+      </div>
+      <div class="btn-sing-up">
+        <span>Dont have an account? <span class="signup">Signup!</span></span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

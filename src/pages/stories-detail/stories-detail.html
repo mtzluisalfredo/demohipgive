@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <ion-avatar item-start>
+        <img src="assets/imgs/1.jpg">
+      </ion-avatar>
+    </ion-buttons>
+
+    <ion-title>
+      <span style="text-align: start; font-size: 11px;"> Page Title</span>
+      <span style="text-align: start">User name</span>
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row style="background-image: url('assets/imgs/photo_1.jpg'); background-size: cover;" class="home-logo">
+    <div class="w-btn-actions-page">
+      <div class="share-btn">
+
+      </div>
+      <div (click)="pageBack()" class="close-btn">
+        <ion-icon name="md-close"></ion-icon>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <h3>Title project</h3>
+    </div>
+
+  </ion-row>
+  <ion-row class="detail-body">
+    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto
+    de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la
+    imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos
+    especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos,
+    quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las
+    cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus
+    PageMaker, el cual incluye versiones de Lorem Ipsum.
+  </ion-row>
+</ion-content>

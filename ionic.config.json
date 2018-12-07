@@ -1,0 +1,7 @@
+{
+  "name": "hipgive",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

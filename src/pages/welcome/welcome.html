@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-row class="home-logo">
+    <ion-img width="80%" height="75" src="./assets/imgs/hipgive_logo.png"></ion-img>
+  </ion-row>
+  <ion-row class="what-hip">
+    <h1>
+      What is HIPGIVE?
+    </h1>
+    <h3>
+      Slide to find out <ion-icon ios="md-arrow-forward" md="md-arrow-forward"></ion-icon>
+    </h3>
+  </ion-row>
+  <div class="footer-btns">
+    <div class="btn-center">
+      <button  (click)='openLogin()' class="btn-login" ion-button round>Login</button>
+    </div>
+    <div class="btn-center" style="margin-bottom: 30px; margin-top: 15px;">
+      <button (click)='openSignupPage()' class="btn-login" style="background: white;color: gray;" ion-button round>
+        <span>Dont have an account? <span style="color: red">Signup!</span></span></button>
+    </div>
+  </div>
+</ion-content>

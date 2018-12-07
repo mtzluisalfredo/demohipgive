@@ -1,0 +1,104 @@
+page-stories {
+  ion-avatar,
+  ion-avatar > img {
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .toolbar-title-custom {
+    display: flex;
+    overflow: visible;
+    position: relative;
+
+    span {
+      font-size: 11px;
+    }
+
+    .hello {
+      position: absolute;
+      top: -15px;
+    }
+
+    .subtitle {
+      font-size: 90%;
+      position: absolute;
+      top: -4px;
+    }
+  }
+
+  .toolbar-title-ios {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toolbar-ios ion-title {
+    padding: 0 50px 1px;
+  }
+
+  .toolbar-title-md {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-browse {
+    border-radius: 10px;
+    height: 180px;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .bg-black {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    ion-avatar {
+      position: absolute;
+      right: 25px;
+    }
+
+    .title {
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .sub-title {
+      color: white;
+    }
+
+    .description {
+      margin-top: 30px;
+      color: white;
+    }
+  }
+
+  .w-search {
+    display: flex;
+    margin-bottom: 10px;
+
+    button {
+      background: transparent;
+      color: gray;
+      box-shadow: none;
+      width: 40px;
+    }
+
+    ion-icon {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      font-size: 30px;
+    }
+
+    ion-input {
+      border: 1px solid gray;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+  }
+}

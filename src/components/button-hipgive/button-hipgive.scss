@@ -1,0 +1,14 @@
+button-hipgive {
+  display: flex;
+  justify-content: center;
+
+  .btn-center {
+    button {
+      background: red;
+      width: 150px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}

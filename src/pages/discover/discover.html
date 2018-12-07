@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <ion-avatar item-start>
+        <img src="assets/imgs/1.jpg">
+      </ion-avatar>
+    </ion-buttons>
+
+    <ion-title>
+      <span style="text-align: start; font-size: 11px;"> Page Title</span>
+      <span style="text-align: start">Page Title</span>
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher pullMin="160" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="title-page">
+    <span class="title">Rising Projects</span>
+  </div>
+  <div class="w-slider">
+    <span class="dot-red"></span>
+    <span class="dot-yellow"></span>
+    <span class="dot-back"></span>
+    <div class="img-blur" effect="fade" [ngStyle]="setMyStyle()"></div>
+    <div class="img-blur" effect="fade" [ngStyle]="{'background-image': 'url(' + indexImg + ')'}"></div>
+    <ion-slides loop (ionSlideDidChange)="slideChanged()" class="photos" spaceBetween="10" slidesPerView="1.3">
+      <ion-slide *ngFor="let project of dataProjects">
+        <info-item [project]="project"></info-item>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <ion-row style=" width: 100%; height: 100px; position: absolute; top: 370px; ">
+    <ion-slides loop (ionSlideDidChange)="slideChanged()" class="photos" spaceBetween="10" slidesPerView="1.3">
+      <ion-slide *ngFor="let project of dataProjects">
+        <info-item [project]="project"></info-item>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+  <div class="w-title" *ngIf="dataProjects.length > 0">
+    <span class="title">Rising Projects</span>
+  </div>
+  <div style="margin-bottom: 300px"></div>
+  <!--
+  <div *ngIf="dataProjects.length == 0" class="w-title">
+    <span class="title">There are no projects</span>
+  </div>
+-->
+  <!-- <div class="list-discover" *ngIf="dataProjects.length > 0">
+    <item-list *ngFor="let project of dataProjects" [project]="project"></item-list>
+  </div> -->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

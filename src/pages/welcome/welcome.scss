@@ -1,0 +1,55 @@
+page-welcome {
+  ion-content {
+    background-image: url("/assets/imgs/w-one.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .home-logo {
+    justify-content: flex-end;
+    margin-top: 50px;
+    padding: 25px;
+    padding-bottom: 0;
+  }
+
+  .what-hip {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    padding-right: 20px;
+    text-align: right;
+
+    h1 {
+      color: white;
+      margin: 0;
+    }
+    h3 {
+      color: white;
+    }
+  }
+
+
+  .footer-btns {
+    bottom: 20px;
+    position: absolute;
+    width: 100%;
+
+    .btn-center {
+      margin-top: 5px;
+      text-align: center;
+      width: 100%;
+      button {
+        height: 40px;
+        background: red;
+        border-radius: 5px;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+
+      .btn-login {
+        margin: 0;
+        width: 90%;
+      }
+    }
+  }
+}
