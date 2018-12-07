@@ -9,7 +9,7 @@
 
   </div>
   <div *ngFor="let levels of itemsLevels; let i=index">
-    <div (click)="openDetail()" class="item-browse" [style.background-image]="'url(' + getBackgroundStyle(i) + ')'"
+    <div (click)="openDetail(i)" class="item-browse" [style.background-image]="'url(' + getBackgroundStyle(i) + ')'"
       style="background-size: cover;">
       <div class="bg-black">
         <ion-avatar item-start>

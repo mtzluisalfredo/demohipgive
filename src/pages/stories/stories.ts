@@ -56,9 +56,9 @@ export class StoriesPage {
     return 'assets/imgs/' + (index+1) + '.jpg';
   }
 
-  openDetail() {
+  openDetail(i) {
     console.log("​StoriesPage -> openDetail -> openDetail")
-    this.navCtrl.push('StoriesDetailPage');
+    this.navCtrl.push('StoriesDetailPage', { imgIndex: i });
 
   }
 }

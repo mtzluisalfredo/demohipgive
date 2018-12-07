@@ -14,12 +14,20 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
   templateUrl: 'stories-detail.html',
 })
 export class StoriesDetailPage {
+  imgIndex: any;
 
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public menuCtrl: MenuController, public navParams: NavParams) {
+      this.imgIndex = this.navParams.get('imgIndex');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StoriesDetailPage');
+  }
+
+  public getBackgroundStyle(index) {
+    return 'assets/imgs/' + (index+1) + '.jpg';
   }
 
   pageBack() {

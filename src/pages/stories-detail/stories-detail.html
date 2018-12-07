@@ -1,7 +1,7 @@
 <header-hg></header-hg>
 
 <ion-content>
-  <ion-row style="background-image: url('assets/imgs/photo_1.jpg'); background-size: cover;" class="home-logo">
+  <ion-row [style.background-image]="'url(' + getBackgroundStyle(imgIndex) + ')'" style="background-size: cover;" class="home-logo">
     <div class="w-btn-actions-page">
       <div class="share-btn">
 
