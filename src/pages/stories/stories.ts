@@ -53,7 +53,6 @@ export class StoriesPage {
   }
 
   openMenuUser() {
-    console.log("​StoriesPage -> openMenuUser -> openMenuUser")
     this.menuCtrl.open('menuUser');
   }
 

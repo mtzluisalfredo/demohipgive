@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Slides, LoadingController, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Slides, MenuController, LoadingController, Platform } from 'ionic-angular';
 import { ApiAppProvider } from '../../providers/api-app/api-app';
 
 @IonicPage()
@@ -22,6 +22,7 @@ export class DiscoverPage {
   isIos: any = false;
 
   constructor(
+    public menuCtrl: MenuController,
     public navCtrl: NavController,
     public navParams: NavParams,
     public apiAppProvider: ApiAppProvider,
@@ -57,6 +58,9 @@ export class DiscoverPage {
     );
   }
 
+  openMenuUser() {
+    this.menuCtrl.open('menuUser');
+  }
 
 
   doRefresh(refresher) {

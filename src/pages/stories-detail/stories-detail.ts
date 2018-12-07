@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
 /**
  * Generated class for the StoriesDetailPage page.
@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class StoriesDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public menuCtrl: MenuController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -24,5 +24,9 @@ export class StoriesDetailPage {
 
   pageBack() {
     this.navCtrl.pop()
+  }
+
+  openMenuUser() {
+    this.menuCtrl.open('menuUser');
   }
 }

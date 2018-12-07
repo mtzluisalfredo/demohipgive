@@ -53,3 +53,49 @@
     background-color: transparent;
   }
 }
+
+#menuUser {
+  ion-avatar,
+  ion-avatar > img {
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .toolbar-title-custom {
+    display: flex;
+    overflow: visible;
+    position: relative;
+
+    span {
+      font-size: 11px;
+    }
+
+    .subtitle {
+      font-size: 90%;
+      position: absolute;
+      top: -4px;
+    }
+  }
+
+  .toolbar-title-ios {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toolbar-ios ion-title {
+    padding: 0 50px 1px;
+  }
+
+  .toolbar-title-md {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item-browse {
+    border-radius: 10px;
+    height: 180px;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}

@@ -1,9 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons left>
-      <ion-avatar item-start>
-        <img src="assets/imgs/1.jpg">
-      </ion-avatar>
+        <div (click)="openMenuUser()">
+            <ion-avatar item-start>
+              <img src="assets/imgs/1.jpg">
+            </ion-avatar>
+          </div>
     </ion-buttons>
 
     <ion-title>
@@ -30,18 +32,18 @@
     <span class="dot-red"></span>
     <span class="dot-yellow"></span>
     <span class="dot-back"></span>
-    <div class="img-blur" effect="fade" [ngStyle]="setMyStyle()"></div>
-    <div class="img-blur" effect="fade" [ngStyle]="{'background-image': 'url(' + indexImg + ')'}"></div>
+    <!-- <div class="img-blur" effect="fade" [ngStyle]="setMyStyle()"></div> -->
+    <!-- <div class="img-blur" effect="fade" [ngStyle]="{'background-image': 'url(' + indexImg + ')'}"></div> -->
     <ion-slides loop (ionSlideDidChange)="slideChanged()" class="photos" spaceBetween="10" slidesPerView="1.3">
       <ion-slide *ngFor="let project of dataProjects; let i=index">
-        <info-item [project]="project"></info-item>
+        <info-item [project]="project" [imgIndex]="i"></info-item>
       </ion-slide>
     </ion-slides>
   </div>
   <ion-row style=" width: 100%; height: 100px; position: absolute; top: 370px; ">
     <ion-slides loop (ionSlideDidChange)="slideChanged()" class="photos" spaceBetween="10" slidesPerView="1.3">
       <ion-slide *ngFor="let project of dataProjects; let i=index">
-        <info-item [project]="project"></info-item>
+        <info-item [project]="project" [imgIndex]="i"></info-item>
       </ion-slide>
     </ion-slides>
   </ion-row>

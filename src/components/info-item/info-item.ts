@@ -12,11 +12,14 @@ export class InfoItemComponent {
   text: string;
   @Input()
   public project: any = {};
+  @Input()
+  public imgIndex: any;
 
   goal: any = 0;
   nameProject: string;
   addressProject: string;
   feature_image: string = '0';
+
 
   constructor(
     public navCtrl: NavController,
@@ -56,7 +59,7 @@ export class InfoItemComponent {
       currency: 'USD',
       minimumFractionDigits: 2
     })
-
+    this.imgIndex = this.imgIndex;
     this.myCallback = this.myCallback;
     this.text = this.text;
     this.project = this.project;
