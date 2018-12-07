@@ -2,7 +2,7 @@
   <ion-navbar hideBackButton="true">
     <ion-buttons left>
       <ion-avatar item-start>
-        <img src="assets/imgs/1.jpg">
+        <img src="./assets/imgs/1.jpg">
       </ion-avatar>
     </ion-buttons>
 
@@ -83,9 +83,9 @@
   </div>
 
   <div *ngIf="!listLevel" style="margin-top: 10px; justify-content: center; display: flex;">
-    <button class="btn-organitation" ion-item text-wrap>
+    <button class="btn-organitation" ion-item text-wrap (click)="openPayment()">
       <ion-avatar item-start>
-        <img src="assets/imgs/1.jpg">
+        <img src="./assets/imgs/1.jpg">
       </ion-avatar>
       <div class="title-btn-organitation">
         <ion-title>

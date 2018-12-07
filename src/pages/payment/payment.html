@@ -1,0 +1,83 @@
+<!--
+  Generated template for the PaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left>
+      <ion-avatar item-start>
+        <img src="./assets/imgs/1.jpg">
+      </ion-avatar>
+    </ion-buttons>
+
+    <div>
+      <ion-title>
+        <span style="text-align: start; font-size: 11px;"> Page Title</span>
+        <span style="text-align: start">Page Title</span>
+      </ion-title>
+    </div>
+
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div style="margin-top: 10px; justify-content: center; display: flex;">
+        <button class="btn-organitation" ion-item text-wrap (click)="pageBack()">
+          <ion-icon ios="ios-arrow-back" md="ios-arrow-back" item-start></ion-icon>
+          <ion-avatar item-start>
+            <img src="./assets/imgs/1.jpg">
+          </ion-avatar>
+          <div class="title-btn-organitation">
+            <ion-title>
+              <span style="text-align: start; font-size: 11px; color: gray;">BACK TO</span>
+              <span style="text-align: start; color: gray;">TITLE PROJECT</span>
+            </ion-title>
+          </div>
+        </button>
+      </div>
+      <ion-grid padding-vertical>
+        <ion-row padding-vertical>
+          <div class="text-money" padding-vertical>
+            <div class="text-money-top">You are abouth to donate</div>
+            <h1>$20.00</h1>
+            <div class="text-money-bottom">The power of a Dream</div>
+        </div>
+        </ion-row>
+        <ion-row>
+          <div class="text-money-method">
+            <h1>Choose payment Method</h1>
+          </div>
+        </ion-row>
+        <ion-row class="card-custom">
+            <button class="btn-payment" ion-item text-wrap no-lines>
+              <div class="title-btn-organitation">
+                <ion-title>
+                  <span style="text-align: start; color: red; font-size: 1.7rem;">DEFAULT PAYMENT METHOD</span>
+                  <span style="text-align: start; font-size: 11px; color: gray;">**** 1234 <span style="padding-left: 23px;">Exp. 00/00</span></span>
+                </ion-title>
+              </div>
+              <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+            </button>
+            <button class="card-custom-item" ion-item text-wrap (click)="openCreditCard()">
+              <ion-label>
+                New credit / Debit Card
+              </ion-label>
+            </button>
+            <button class="card-custom-item" ion-item text-wrap (click)="openPaypal()">
+              <ion-label>
+                Paypal
+              </ion-label>
+            </button>
+
+        </ion-row>
+      </ion-grid>
+
+</ion-content>
