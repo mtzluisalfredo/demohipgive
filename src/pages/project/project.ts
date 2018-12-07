@@ -112,6 +112,10 @@ export class ProjectPage {
     });
   }
 
+  openPayment() {
+    this.navCtrl.push('PaymentPage');
+  }
+
   pageBack() {
     this.navCtrl.pop()
   }
