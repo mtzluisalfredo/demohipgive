@@ -24,32 +24,143 @@
         <div class="text-money-bottom">The power of a Dream</div>
       </div>
     </ion-row>
-    <ion-row>
+
+    <div *ngIf="showCard" style="margin-top: 10px; justify-content: center; display: flex; width: 75%;">
+      <button class="btn-organitation-back" ion-item text-wrap (click)="toggleCard()">
+        <ion-icon ios="ios-arrow-back" md="ios-arrow-back" item-start></ion-icon>
+        <div class="title-btn-organitation">
+          <ion-title>
+            <span style="text-align: start; color: gray;">Back to Donations Methods</span>
+          </ion-title>
+        </div>
+      </button>
+    </div>
+    <ion-row *ngIf="!showCard">
       <div class="text-money-method">
         <h1>Choose payment Method</h1>
       </div>
     </ion-row>
-    <ion-row class="card-custom">
+    <ion-row *ngIf="!showCard" class="card-custom">
       <button class="btn-payment" ion-item text-wrap no-lines>
         <div class="title-btn-organitation">
           <ion-title>
             <span style="text-align: start; color: red; font-size: 1.7rem;">DEFAULT PAYMENT METHOD</span>
             <span style="text-align: start; font-size: 11px; color: gray;">**** 1234 <span style="padding-left: 23px;">Exp.
-                00/00</span></span>
+                00/00
+              </span></span>
           </ion-title>
         </div>
         <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
       </button>
       <button class="card-custom-item" ion-item text-wrap (click)="openCreditCard()">
         <ion-label>
-          New credit / Debit Card
+          NEW CREDIT / DEBIT CARD
         </ion-label>
       </button>
       <button class="card-custom-item" ion-item text-wrap (click)="openPaypal()">
         <ion-label>
-          Paypal
+          PAYPAL
         </ion-label>
       </button>
+
+    </ion-row>
+
+    <ion-row *ngIf="showCard" class="card-custom" margin-vertical>
+      <div [ngSwitch]="menu">
+        <div *ngSwitchCase="'card'">
+          <ion-title padding-vertical>
+            CARD INFORMATION
+          </ion-title>
+          <ion-row class="card-custom">
+            <form #cardForm="ngForm" (ngSubmit)="addCard()" autocomplete="off">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-12>
+                    <ion-label style="margin: 0px;margin-top: 10px;">Card number</ion-label>
+                    <ion-item class="input-app" no-line style="margin-top: 5px;">
+                      <ion-input placeholder="0000 0000 0000 0000" type="tel" name="number" [(ngModel)]="number" autocorrect="off" autocapitalize="off"
+                        required></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col col-6>
+                    <ion-label style="margin: 0px;margin-top: 10px;">Exp.</ion-label>
+                    <ion-item class="input-app" no-line style="margin-top: 5px;">
+                      <ion-input placeholder="00/00" type="tel" name="expiration" [(ngModel)]="expiration" required></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col col-6>
+                    <ion-label style="margin: 0px;margin-top: 10px;">CVV</ion-label>
+                    <ion-item class="input-app" no-line style="margin-top: 5px;">
+                      <ion-input placeholder="0000" type="tel" name="code" [(ngModel)]="code" required></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+                <ion-item class="input-check" no-lines>
+                  <ion-label>Save this card for future donations</ion-label>
+                  <ion-checkbox color="danger" name="save" [(ngModel)]="save" (ionChange)="updateSave()"></ion-checkbox>
+                </ion-item>
+                <ion-item class="input-check" no-lines>
+                  <ion-label>Subscribe to project updates</ion-label>
+                  <ion-checkbox color="danger" name="subscribe" [(ngModel)]="subscribe" (ionChange)="updateSubscribe()"></ion-checkbox>
+                </ion-item>
+              </ion-grid>
+              <button-hipgive type="submit" [text]="'Continue'" padding-vertical></button-hipgive>
+            </form>
+
+          </ion-row>
+        </div>
+        <div *ngSwitchCase="'paypal'">
+          <ion-title padding-vertical>
+            REVIEW DONATION
+          </ion-title>
+          <ion-row class="card-custom">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-8 class="card-custom-left">
+                    <ion-label style="margin: 0px;margin-top: 10px;">Donation Amount</ion-label>
+                  </ion-col>
+                  <ion-col col-4 class="card-custom-right">
+                    <ion-label style="margin: 0px;margin-top: 10px;">$20.00</ion-label>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-7 class="card-custom-left">
+                      <h4 style="margin: 0px;margin-top: 10px;">Add a TipHip</h4>
+                      <ion-label style="margin: 0px;margin-top: 10px; color:red; font-size: 14px;">Whats is a TipHip?</ion-label>
+                    </ion-col>
+                  <ion-col col-5 class="card-custom-right-box">
+                    $
+                    <ion-item class="input-app" no-line style="margin-top: 5px;">
+                      <ion-input placeholder="3.00" type="tel" name="donation" [(ngModel)]="donation" autocorrect="off" autocapitalize="off"
+                        required></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-8 class="card-custom-left">
+                    <ion-label style="margin: 0px;margin-top: 10px;">Total Donation</ion-label>
+                  </ion-col>
+                  <ion-col col-4 class="card-custom-right">
+                    <ion-label style="margin: 0px;margin-top: 10px;">$23.00</ion-label>
+                  </ion-col>
+                </ion-row>
+                <ion-card>
+
+                    <ion-card-header>
+                        <ion-icon ios="md-heart" md="md-heart" item-start></ion-icon> Matching Funds
+                        <p>This project is eligable for matching founds</p>
+                    </ion-card-header>
+                  
+                    <ion-card-content>
+                        <p>Campaing Projects allows us to match your donation up to a designated amount</p>
+                    </ion-card-content>
+                  
+                  </ion-card>
+              </ion-grid>
+              <button-hipgive [text]="'Donate $23.00'" padding-vertical></button-hipgive>
+          </ion-row>
+        </div>
+      </div>
 
     </ion-row>
   </ion-grid>
