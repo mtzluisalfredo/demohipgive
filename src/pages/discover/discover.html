@@ -19,10 +19,18 @@
       </ion-slide>
     </ion-slides>
   </div>
-  <ion-row style=" width: 100%; height: 100px; position: absolute; top: 370px; ">
+  <ion-row class="two-level" style=" width: 100%; height: 100px; position: absolute; top: 370px; ">
     <ion-slides loop (ionSlideDidChange)="slideChanged()" class="photos" spaceBetween="10" slidesPerView="1.3">
       <ion-slide *ngFor="let project of dataProjects; let i=index">
-        <info-item [project]="project" [imgIndex]="i"></info-item>
+        <info-item [project]="project" [imgIndex]="i + 7"></info-item>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+
+  <ion-row class="two-level" style=" width: 100%; height: 100px; position: absolute; top: 600px; ">
+    <ion-slides loop (ionSlideDidChange)="slideChanged()" class="photos" spaceBetween="10" slidesPerView="1.3">
+      <ion-slide *ngFor="let project of dataProjects; let i=index">
+        <info-item [project]="project" [imgIndex]="i + 2"></info-item>
       </ion-slide>
     </ion-slides>
   </ion-row>

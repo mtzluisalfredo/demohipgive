@@ -205,4 +205,14 @@ page-discover {
     display:none;
   }
 
+  .two-level {
+    .swiper-slide {
+      height: 170px !important;
+    }
+
+    .footer-item {
+      top: 100px !important;
+    }
+  }
+
 }
