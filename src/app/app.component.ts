@@ -12,15 +12,15 @@ export class MyApp {
   rootPage: any;
   itemsLevelsOne = [1, 2, 3, 4];
   itemsLevelsTwo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  resultCategories : any;
-  resultCountries : any;
+  resultCategories: any;
+  resultCountries: any;
   brightness: number = 20;
   saturation: number = 0;
   warmth: number = 1300;
-  structure: any = {lower: 33, upper: 60};
+  structure: any = { lower: 33, upper: 60 };
   valuesRange: any;
 
-  constructor(platform: Platform,  public apiAppProvider: ApiAppProvider, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, public apiAppProvider: ApiAppProvider, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -35,32 +35,33 @@ export class MyApp {
       splashScreen.hide();
       var resultAPI = null;
       // this.apiAppProvider.getStories();
-      this.apiAppProvider.getCountries().then(
-        result => {
-          if (Boolean(result)) {
-            resultAPI = result;
-            this.resultCountries = resultAPI;
-            // console.log("​MyApp -> ionViewDidLoad -> this.resultCategories", this.resultCategories)
-            resultAPI = null;
+      if (authToken) {
+        this.apiAppProvider.getCountries().then(
+          result => {
+            if (Boolean(result)) {
+              resultAPI = result;
+              this.resultCountries = resultAPI;
+              resultAPI = null;
+            }
+          },
+          err => {
+            console.log('error:', err);
           }
-        },
-        err => {
-          console.log('error:', err);
-        }
-      );
-      this.apiAppProvider.getCategories().then(
-        result => {
-          if (Boolean(result)) {
-            resultAPI = result;
-            this.resultCategories = resultAPI;
-            console.log("​MyApp -> ionViewDidLoad -> this.resultCategories", this.resultCategories)
-            resultAPI = null;
+        );
+        this.apiAppProvider.getCategories().then(
+          result => {
+            if (Boolean(result)) {
+              resultAPI = result;
+              this.resultCategories = resultAPI;
+              console.log("​MyApp -> ionViewDidLoad -> this.resultCategories", this.resultCategories)
+              resultAPI = null;
+            }
+          },
+          err => {
+            console.log('error:', err);
           }
-        },
-        err => {
-          console.log('error:', err);
-        }
-      );
+        );
+      }
     });
   }
 
@@ -75,12 +76,12 @@ export class MyApp {
   }
 
   clearFilterOne() {
-		console.log("​MyApp -> clearFilterOne -> clearFilterOne")
+    console.log("​MyApp -> clearFilterOne -> clearFilterOne")
 
   }
 
   saveFilterOne() {
-		console.log("​MyApp -> saveFilterOne -> saveFilterOne")
+    console.log("​MyApp -> saveFilterOne -> saveFilterOne")
 
   }
 }
